@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DATA BEASISWA TANSAH</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/bootstrap/css/bootstrap.css'>
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+</head>
+<body >
+<div class="container">
+  <div class="card mt-3"> 
+    <div class="row no-gutters">
+  <!--      <div class="col-md-12"> -->
+        <div class="col-md-3">
+         <img src="img/tansah.jpg" class="rounded-circle" height="200pt" width="200pt" alt="...">
+        </div>
+        <div class="col-md-9">
+           <div class="card-body">
+                <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Nama: Tansah Prayoga</p>
+               <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">NIM: 201701006</p>
+               <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Email: prayogatansah@gmail.com</p>
+               <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Phone: 081228346179</p>
+               <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Alamat: Jl Mangga No.1A Cilacap Jawa Tengah</p>
+  
+              </div>
+        </div>
+  <!--      </div> -->
+    </div>
+  </div>
+  <div class="card mt-3"> 
+    <div class="row no-gutters">
+  <!--      <div class="col-md-12"> -->
+        <div class="col-md-4 border border-primary">
+            <div class="card-body">
+                <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Nilai Rata Rata Ujian</p>
+              <div class="row">
+                <div class="col-md-12">
+                    <div id="rata_nilai_1" class="text-center" style="font-size: 20pt;"></div>
+                 </div>
+                <div class="col-md-6">
+                  <div id="nilai_tertulis"></div>
+                </div>
+                <div class="col-md-6">
+                   <div id="nilai_praktek"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 border border-primary">
+           <div class="card-body">
+                <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Skore Toefl</p>
+               <div class="row">
+                <div class="col-md-12">
+                  <div id="nilai_toefl" class="text-center" style="font-size: 20pt; font-family: 'Times New Roman', Times, serif;"></div>
+                </div>
+                 <div class="col-md-12">
+                  <div id="na_toefl" class="text-center" style="font-size: 10pt; font-family: 'Times New Roman', Times, serif;"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      <div class="col-md-4 border border-primary">
+           <div class="card-body">
+                <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Status Beasiswa</p>
+                 <div class="row">
+                <div class="col-md-12">
+                  <div id="status_beasiswa" class="text-center" style="font-size: 15pt; font-family: 'Times New Roman', Times, serif;"></div>
+                </div>
+                 <div class="col-md-12">
+                  <div id="rata_nilai" class="text-center" style="font-size: 10pt; font-family: 'Times New Roman', Times, serif;"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+  <!--      </div> -->
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<script>
+var nilai = document.getElementById("nilai");
+var toefl = document.getElementById("toefl");
+var nilai_tertulis = document.getElementById("nilai_tertulis");
+var nilai_praktek = document.getElementById("nilai_praktek");
+var nilai_toefl = document.getElementById("nilai_toefl");
+var na_toefl = document.getElementById("na_toefl");
+var status_beasiswa = document.getElementById("status_beasiswa");
+var rata_nilai = document.getElementById("rata_nilai");
+var rata_nilai_1 = document.getElementById("rata_nilai_1");
+
+var nilai_ujian_tertulis_1 =
+    prompt("Masukkan Nilai Ujian Tertulis 1");
+var nilai_ujian_tertulis_2 =
+    prompt("Masukkan Nilai Ujian Tertulis 2");
+var nilai_ujian_praktek = 
+    prompt("Masukkan Nilai Ujian Praktek");
+var nilai_ujian_toefl =
+    prompt("Masukkan Nilai Ujian Toefl");
+
+var avg_nilai_ujian = (parseInt(nilai_ujian_tertulis_1) + parseInt(nilai_ujian_tertulis_2) + parseInt(nilai_ujian_praktek)) / 3 
+
+var nilai_akhir_toefl = 0
+var v_nilai_tertulis = (parseInt(nilai_ujian_tertulis_1)+ parseInt(nilai_ujian_tertulis_2))/2
+var v_nilai_praktek = nilai_ujian_praktek
+
+if (avg_nilai_ujian > 90) {
+    nilai_tertulis.innerHTML = "Nilai Tertulis " +v_nilai_tertulis
+    nilai_praktek.innerHTML = "Nilai Praktek " + v_nilai_praktek
+    status_beasiswa.innerHTML="LULUS BEASISWA"
+    rata_nilai.innerHTML= 'Nilai '+avg_nilai_ujian.toFixed(0)
+    rata_nilai_1.innerHTML= avg_nilai_ujian.toFixed(0)
+}
+else {
+    nilai_tertulis.innerHTML = "Nilai Tertulis " +v_nilai_tertulis
+    nilai_praktek.innerHTML = "Nilai Praktek " + v_nilai_praktek
+    status_beasiswa.innerHTML= "TIDAK LULUS BEASISWA"
+    rata_nilai.innerHTML= 'Nilai '+avg_nilai_ujian.toFixed(0)
+    rata_nilai_1.innerHTML= avg_nilai_ujian.toFixed(0)
+}
+
+if (nilai_ujian_toefl > 500){
+    nilai_toefl.innerHTML = nilai_ujian_toefl
+    na_toefl.innerHTML = 'Nilai 100'
+
+}
+else if(nilai_ujian_toefl <= 500 && nilai_ujian_toefl>=450){
+    nilai_toefl.innerHTML = nilai_ujian_toefl
+    na_toefl.innerHTML = 'Nilai 85'
+}
+else if(nilai_ujian_toefl < 450){
+    nilai_toefl.innerHTML = nilai_ujian_toefl
+    na_toefl.innerHTML = 'Nilai 50'
+}
+
+</script>
